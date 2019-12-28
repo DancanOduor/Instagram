@@ -93,3 +93,4 @@ def logout(request):
 	context = {}
 	dlogout(request)
 	return redirect(home)
+	

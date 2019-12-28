@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'instapic',
     'instapicapp', 
     'tinymce',
+    'django_instagram',
     'pyuploadcare.dj',
     'bootstrap3',
     'django.contrib.admin',
@@ -159,5 +160,6 @@ PASSWORD_HASHERS = (
 AUTHENTICATION_BACKENDS = ('Instapicapp.authb.AuthB',)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 # ROOT_URLCONF = 'site.urls'
