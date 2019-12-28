@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
@@ -36,12 +38,12 @@ urlpatterns = [
     url(r'^ajax-follow$', views.ajaxfollow),
     url(r'^ajax-tag$', views.ajaxtag),
     url(r'^ajax-photo-feed$', views.ajaxphotofeed),
-    url('', TemplateView.as_view(template_name='index.html', extra_context={
-        "instagram_profile_name": "amd"
-    })),
+    url(r'^accounts/', include('registration.backends.simple.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 # urlpatterns = patterns('',
 #     (r'^tinymce/', include('tinymce.urls')),
 # )
+  

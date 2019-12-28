@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'django.template.context_processors.media',
             ],
         },
     },
@@ -157,9 +158,16 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.CryptPasswordHasher',
 )
 
-AUTHENTICATION_BACKENDS = ('Instapicapp.authb.AuthB',)
+AUTHENTICATION_BACKENDS = ('instapicapp.authb.AuthB',)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-# ROOT_URLCONF = 'site.urls'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
