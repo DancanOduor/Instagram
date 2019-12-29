@@ -25,9 +25,9 @@ from . import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url(r'^upload$', views.upload, name='upload'),
-    url(r'^sign-up$', views.signup),
-    url(r'^logout$', views.logout),
+    url(r'^upload/$', views.upload, name='upload'),
+    url(r'^sign-up/$', views.signup),
+    url(r'^logout/$', views.logout),
     url(r'^(?P<username>[a-zA-Z0-9_]+)$', views.profile),
     url(r'^ajax-sign-up$', views.ajaxsignup),
     url(r'^ajax-login$', views.ajaxlogin),
