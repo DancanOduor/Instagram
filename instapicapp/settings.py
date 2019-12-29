@@ -97,7 +97,7 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.mysql',
         'NAME': 'instapic',
         'USER': 'moringa',
-        'PASSWORD':'5555',
+        'PASSWORD':'Access',
         'HOST': '127.0.0.1',
         'PORT': '5432',
         
