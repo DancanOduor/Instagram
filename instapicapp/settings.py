@@ -91,10 +91,7 @@ WSGI_APPLICATION = 'instapicapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql',
-        # 'ENGINE': 'django.db.backends.mysql',
         'NAME': 'instapic',
         'USER': 'moringa',
         'PASSWORD':'Access',
@@ -159,6 +156,6 @@ PASSWORD_HASHERS = (
 )
 
 AUTHENTICATION_BACKENDS = ('instapicapp.authb.AuthB',)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
